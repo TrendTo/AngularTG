@@ -1,0 +1,41 @@
+<div *ngIf="!cargando">
+    Verdad
+</div>
+<div *ngIf="cargando">
+    Falso
+</div>
+<button (click)="alternar()">Click Me</button>
+<div *ngFor="let nombre of nombres">
+    <p>Hola mi nombre es: {{ nombre }}</p>
+</div>
+<div *ngFor="let prod of productos">
+    <p>El nombre del producto {{ prod.nombre }} tiene un stock de: {{ prod.stock }}</p>
+</div>
+
+<div>
+    <span [ngSwitch]="tab">
+    <button (click)="CambiarTab('perfil')">Perfil</button>
+    <button (click)="CambiarTab('puntos')">Puntos</button>
+    <button (click)="CambiarTab('info')">Info</button>
+
+    <p *ngSwitchCase="'perfil'">
+        Este es perfil
+    </p>
+    <p *ngSwitchCase="'puntos'">
+        Estos son tus puntos
+    </p>
+    <p *ngSwitchCase="'info'">
+        Esta es la info
+    </p>
+    <p *ngSwitchDefault>
+        Seleccione una opcion
+    </p>
+    </span>
+
+</div>
+
+<div>
+    <p [ngClass]="{'test': true}">Texto Linea1</p>
+    <p [ngClass]="{'test': true}">Texto Linea2</p>
+    <p [ngClass]="{'test': false}">Texto Linea3</p>
+</div>
